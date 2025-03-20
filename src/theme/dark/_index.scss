@@ -1,0 +1,19 @@
+@use "util" as *;
+@use "components";
+@use "features";
+
+@mixin dark {
+  background-color: $background;
+  color: $primary;
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    font-family: $font-family;
+
+    @include breakpoint(medium) {
+      width: 100%;
+    }
+    
+  }
+}

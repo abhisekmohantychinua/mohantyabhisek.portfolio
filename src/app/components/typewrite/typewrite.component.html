@@ -1,0 +1,5 @@
+<p [ngClass]="identifier() !== '' ? identifier() + '-typewrite' : 'typewrite'">
+  {{ prefix() }}  <span [ngClass]="identifier() !== '' ? identifier() + '-typewrite-text' : 'typewrite-text'">
+  {{ textToType() }}
+</span>  {{ suffix() }}
+</p>

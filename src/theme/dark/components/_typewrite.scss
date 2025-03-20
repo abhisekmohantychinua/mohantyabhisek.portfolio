@@ -1,0 +1,13 @@
+@use '../util/pallete' as *;
+@use '../util/typography' as *;
+
+
+.typewrite {
+  font-size: fs(md);
+
+  &-text {
+    color: $accent;
+    font-weight: fw(bold);
+    text-transform: uppercase;
+  }
+}
