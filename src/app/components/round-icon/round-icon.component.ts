@@ -1,4 +1,4 @@
-import {Component, computed, inject, input} from '@angular/core';
+import {Component, computed, inject, input, output} from '@angular/core';
 import {IconService} from '../../core/services/icon.service';
 import {DomSanitizer} from '@angular/platform-browser';
 
@@ -15,4 +15,9 @@ export class RoundIconComponent {
   iconAsSvg = computed(() => {
     return this.domSanitizer.bypassSecurityTrustHtml(this.iconService.getIcon(this.icon()));
   });
+  btnClick = output();
+
+  onClick(): void {
+    this.btnClick.emit();
+  }
 }

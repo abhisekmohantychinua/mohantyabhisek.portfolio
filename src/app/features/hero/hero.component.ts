@@ -18,5 +18,5 @@ import {RoundIconComponent} from '../../components/round-icon/round-icon.compone
 export class HeroComponent {
   name = 'Abhisek Mohanty';
   profession = 'Full Stack Java Developer';
-  description = ['Designer', 'Developer', 'Editor'];
+  description = ['Web Designer', 'Competitive Coder', 'Fullstack Developer', 'Backend Service Developer', 'DevOps Engineer', 'Java Geek', 'Freelancer', 'Tech Mentor'];
 }

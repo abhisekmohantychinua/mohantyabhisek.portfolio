@@ -1,9 +1,13 @@
-@use '../util/pallete' as *;
-@use '../util/typography' as *;
+@use '../util' as *;
+@use '../util' as *;
 
 
 .typewrite {
   font-size: fs(md);
+
+  @include breakpoint(medium) {
+    height: 64px;
+  }
 
   &-text {
     color: $accent;

@@ -5,15 +5,19 @@
 @mixin dark {
   background-color: $background;
   color: $primary;
+  font-family: $font-family;
+
+  .header {
+    height: 80px;
+    width: 100%;
+  }
 
   .container {
     width: 80%;
     margin: 0 auto;
-    font-family: $font-family;
 
     @include breakpoint(medium) {
       width: 100%;
     }
-    
   }
 }
