@@ -1,0 +1,33 @@
+<div class="project-card" [attr.data-state]="state()">
+  <div class="project-card-content">
+    <div class="project-header">
+      <img class="project-card-image" [ngSrc]="project().image" [alt]="project().title" height="500" width="700"
+           priority>
+      <h4 class="project-title">{{ project().title }} </h4>
+      <div class="project-icon-container">
+        @if (project().links?.github) {
+          <app-round-icon icon="github"/>
+        }
+        @if (project().links?.visit) {
+          <app-round-icon icon="window"/>
+        }
+      </div>
+      <p class="project-tech-container">
+        @for (tech of project().technologies; track $index) {
+          <span class="project-tech-item">{{ tech + ', ' }}</span>
+        }
+      </p>
+    </div>
+
+    <ul class="project-body">
+      @for (desc of project().description; track $index) {
+        <li class="project-desc-item">{{ desc }}</li>
+      }
+    </ul>
+
+  </div>
+  <div class="project-card-navigator">
+    <h4 class="project-card-title">{{ project().title }}</h4>
+    <app-round-icon (btnClick)="toggleState()" icon="arrow-right"/>
+  </div>
+</div>

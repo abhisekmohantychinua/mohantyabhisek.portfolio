@@ -76,5 +76,9 @@
     width: auto;
     max-height: 500px;
     object-fit: scale-down;
+
+    @include breakpoint(small) {
+      max-height: 250px;
+    }
   }
 }

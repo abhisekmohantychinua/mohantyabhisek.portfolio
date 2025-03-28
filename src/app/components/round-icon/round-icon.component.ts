@@ -13,7 +13,12 @@ export class RoundIconComponent {
   private iconService: IconService = inject(IconService);
   private domSanitizer: DomSanitizer = inject(DomSanitizer);
   iconAsSvg = computed(() => {
-    return this.domSanitizer.bypassSecurityTrustHtml(this.iconService.getIcon(this.icon()));
+    try {
+      return this.domSanitizer.bypassSecurityTrustHtml(this.iconService.getIcon(this.icon()));
+    } catch (err) {
+      console.log(err);
+      return '';
+    }
   });
   btnClick = output();
 

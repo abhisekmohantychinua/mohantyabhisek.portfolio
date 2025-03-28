@@ -1,0 +1,13 @@
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+
+  & app-title {
+    align-self: start;
+    margin-left: -20px;
+  }
+}

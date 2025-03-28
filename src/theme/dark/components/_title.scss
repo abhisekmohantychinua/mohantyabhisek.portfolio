@@ -1,0 +1,20 @@
+@use "../util" as *;
+
+.title {
+  font-size: fs(xl);
+  font-weight: fw(medium);
+  position: relative;
+  padding-left: 30px;
+
+  &::before {
+    content: '';
+    background-color: $secondary;
+    height: 40px;
+    width: 20px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
