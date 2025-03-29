@@ -1,0 +1,104 @@
+@use "../util" as *;
+
+.aboutme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+
+  & app-title {
+    align-self: start;
+    margin-left: -20px;
+  }
+
+  &-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    @include breakpoint(medium) {
+      flex-direction: column;
+    }
+  }
+
+  &-image-container {
+    width: 40%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+    gap: 10px;
+    padding: 10px;
+    background: radial-gradient(circle, $secondary 0%, $background 60%);
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 80%;
+      min-height: 400px;
+      align-items: center;
+      background: radial-gradient(circle, $secondary 0%, $background 50%);
+    }
+
+    @include breakpoint(small) {
+      width: 100%;
+      background: radial-gradient(circle, $secondary 0%, $background 70%);
+
+    }
+
+
+    .aboutme-image {
+      border-radius: 5px;
+
+      &:first-child, &:last-child {
+        @include breakpoint(medium) {
+          align-self: inherit;
+        }
+        align-self: start;
+      }
+    }
+
+
+  }
+
+  &-content-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+    padding: 20px 0;
+
+    @include breakpoint(medium) {
+      width: 100%;
+    }
+
+    .aboutme-content {
+
+      &:first-child {
+        font-size: fs(md);
+        font-weight: fw(bold);
+        color: $accent;
+      }
+
+      &:nth-child(2), &:last-child {
+        font-size: fs(sm);
+        font-weight: fw(medium);
+        color: $secondary;
+      }
+
+      &:nth-child(3) {
+        font-size: fs(sm);
+        font-weight: fw(regular);
+        color: $primary
+      }
+
+    }
+  }
+}
