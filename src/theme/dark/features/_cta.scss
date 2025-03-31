@@ -1,0 +1,18 @@
+@use "../util" as *;
+
+.cta {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 50px;
+
+  &-text {
+    font-size: fs(xl);
+    font-weight: fw(bold);
+    text-align: center;
+  }
+
+}
