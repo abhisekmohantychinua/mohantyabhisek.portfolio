@@ -5,10 +5,10 @@
     <app-typewrite [texts]="description" prefix="I am a"/>
     <app-cta-btn/>
     <div class="hero-social-links">
-      <app-round-icon icon="linkedin"></app-round-icon>
-      <app-round-icon icon="github"></app-round-icon>
-      <app-round-icon icon="whatsapp"></app-round-icon>
-      <app-round-icon icon="mail"></app-round-icon>
+      <app-round-icon (btnClick)="openLinkedin()" icon="linkedin"></app-round-icon>
+      <app-round-icon (btnClick)="openGithub()" icon="github"></app-round-icon>
+      <app-round-icon (btnClick)="openWhatsapp()" icon="whatsapp"></app-round-icon>
+      <app-round-icon (btnClick)="openEmail()" icon="mail"></app-round-icon>
     </div>
   </div>
   <img ngSrc="profile.webp" height="1000" width="641" priority alt="hero" class="hero-picture"/>

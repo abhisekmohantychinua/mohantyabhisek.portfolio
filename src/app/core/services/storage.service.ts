@@ -1,11 +1,25 @@
-import {Injectable, signal} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Project} from '../models/project';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
-  projects = signal<Project[]>([
+  name: string = 'Abhisek Mohanty';
+  email: string = 'mohantyabhisek@hotmail.com';
+  github: string = 'https://github.com/abhisekmohantychinua';
+  linkedIn: string = 'https://linkedin.com/in/mohanty-abhisek/';
+  whatsapp: string = 'https://wa.me/+919439485166';
+  profession: string = 'Full Stack Java Developer';
+  description: string[] = ['Web Designer', 'Competitive Coder', 'Fullstack Developer', 'Backend Service Developer', 'DevOps Engineer', 'Java Geek', 'Freelancer', 'Tech Mentor'];
+  aboutme: string[] = [
+    'I don’t follow trends, I create them.',
+    'A developer, thinker, and creator. My journey is about breaking conventions, embracing philosophy, and building experiences that leave an impact.',
+    'But at my core, I’m just someone who chose a different path. Like many, I could have followed the conventional route—secure a job, settle into a routine. But something about that never felt right. I build because I love the process of creation, not just the outcome. I explore because I believe curiosity is more powerful than rules. I chose this path because I wanted to create something that people use every day, something that genuinely makes their lives better.',
+    'I’m not here to impress—I’m here to express and build.'
+  ];
+
+  projects: Project[] = [
     {
       id: '1',
       title: 'E-Commerce (Microservices)',
@@ -105,5 +119,5 @@ export class StorageService {
         visit: 'https://abhisekmohantychinua.github.io/avyakt/'
       }
     }
-  ]);
+  ];
 }

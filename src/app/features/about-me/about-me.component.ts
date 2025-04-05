@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {TitleComponent} from '../../components/title/title.component';
 import {NgOptimizedImage} from '@angular/common';
+import {StorageService} from '../../core/services/storage.service';
 
 @Component({
   selector: 'app-about-me',
@@ -12,5 +13,6 @@ import {NgOptimizedImage} from '@angular/common';
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
-
+  private storage: StorageService = inject(StorageService);
+  aboutme = this.storage.aboutme;
 }
