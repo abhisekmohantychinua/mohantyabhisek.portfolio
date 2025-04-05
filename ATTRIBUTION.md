@@ -18,7 +18,6 @@ You may use the following example format:
 
 ## ❌ What’s Not Allowed
 
-- Commercial usage without prior written consent
 - Reposting as your own work without attribution
 - Using the project to train AI models or generate datasets (unless explicitly permitted)
 
