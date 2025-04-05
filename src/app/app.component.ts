@@ -5,10 +5,11 @@ import {ProjectsComponent} from './features/projects/projects.component';
 import {AboutMeComponent} from './features/about-me/about-me.component';
 import {PhilosophyComponent} from './features/philosophy/philosophy.component';
 import {CtaComponent} from './features/cta/cta.component';
+import {FooterComponent} from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeroComponent, NavbarComponent, ProjectsComponent, AboutMeComponent, PhilosophyComponent, CtaComponent],
+  imports: [HeroComponent, NavbarComponent, ProjectsComponent, AboutMeComponent, PhilosophyComponent, CtaComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
