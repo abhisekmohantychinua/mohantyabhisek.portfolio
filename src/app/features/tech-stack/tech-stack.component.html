@@ -1,0 +1,11 @@
+<section class="tech-stack" id="tech-stack">
+  <app-title text="Tech Stack"/>
+  <div class="tech-stack-container">
+    @for (icon of svgIcons; track $index) {
+      <figure class="tech-stack-item">
+        <span class="tech-stack-icon" [innerHTML]="icon.svg" [attr.data-isDark]="icon.isDark"></span>
+        <figcaption class="tech-stack-desc">{{ icon.name }}</figcaption>
+      </figure>
+    }
+  </div>
+</section>

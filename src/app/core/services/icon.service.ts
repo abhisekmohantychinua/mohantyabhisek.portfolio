@@ -51,4 +51,9 @@ export class IconService {
     }
     throw new Error(`Icon ${iconName} not found`);
   }
+
+  isDark(iconName: string): boolean {
+    let darkKeyset = ['next-js', 'express', 'github', 'sqlite'];
+    return darkKeyset.includes(iconName);
+  }
 }
