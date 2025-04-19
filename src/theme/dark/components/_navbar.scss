@@ -81,6 +81,12 @@
       color: $primary;
       font-size: fs(sm);
       font-weight: fw(medium);
+
+      &:hover, &:focus-visible {
+        outline: none;
+        color: $secondary;
+        transition: color 300ms linear;
+      }
     }
 
     &-item:hover, &-item:focus-visible {
