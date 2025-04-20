@@ -1,4 +1,4 @@
-import {Component, HostListener, inject} from '@angular/core';
+import {Component, HostListener, inject, OnInit} from '@angular/core';
 import {HeroComponent} from './features/hero/hero.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {ProjectsComponent} from './features/projects/projects.component';
@@ -9,6 +9,8 @@ import {FooterComponent} from './components/footer/footer.component';
 import {TechStackComponent} from './features/tech-stack/tech-stack.component';
 import {ActionService} from './core/services/action.service';
 import {CaseStudiesComponent} from './features/case-studies/case-studies.component';
+import {StorageService} from './core/services/storage.service';
+import {ThemeService} from './core/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +18,11 @@ import {CaseStudiesComponent} from './features/case-studies/case-studies.compone
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'portfolio';
   private action: ActionService = inject(ActionService);
-
+  private storage: StorageService = inject(StorageService);
+  private theme: ThemeService = inject(ThemeService);
 
   @HostListener('document:keydown', ['$event'])
   handleKeyPress(event: KeyboardEvent) {
@@ -29,5 +32,8 @@ export class AppComponent {
 
   }
 
+  ngOnInit(): void {
+    this.theme.init();
+  }
 
 }

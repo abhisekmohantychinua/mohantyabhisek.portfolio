@@ -2,7 +2,17 @@
 @use "components";
 @use "features";
 
-@mixin dark {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+[aria-hidden = "true"] {
+  pointer-events: none;
+}
+
+body {
   background-color: $background;
   color: $primary;
   font-family: $font-family;
@@ -42,6 +52,7 @@
   ::-webkit-scrollbar-thumb:hover, &::-webkit-scrollbar-thumb:hover {
     background: $secondary;
   }
+
   & {
     -webkit-tap-highlight-color: transparent;
   }
