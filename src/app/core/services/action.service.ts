@@ -4,7 +4,8 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class ActionService {
-  redirectTo(url: string) {
-    window.open(url, 'blank');
+  redirectTo(url?: string) {
+    if (url)
+      window.open(url, 'blank');
   }
 }

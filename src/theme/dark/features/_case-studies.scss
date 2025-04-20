@@ -1,0 +1,15 @@
+@use "../util" as *;
+
+.case-studies {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  gap: 30px;
+
+  & app-title {
+    align-self: start;
+    margin-left: -20px;
+  }
+}

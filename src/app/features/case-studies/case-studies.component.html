@@ -1,0 +1,6 @@
+<section class="case-studies" id="case-studies">
+  <app-title text="Case Studies"/>
+  @for (caseStudy of caseStudies; track $index) {
+    <app-case-study-card [caseStudy]="caseStudy"/>
+  }
+</section>

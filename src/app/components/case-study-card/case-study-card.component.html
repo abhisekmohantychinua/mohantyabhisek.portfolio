@@ -1,0 +1,20 @@
+<article class="case-study-card" [attr.data-open]="open()">
+  <header class="case-study-card-header">
+    <h3 class="case-study-card-title">{{ caseStudy().title }}</h3>
+    <app-round-icon icon="arrow" (btnClick)="toggleOpen()"/>
+  </header>
+  <p class="case-study-card-desc">{{ caseStudy().description }}</p>
+  @for (detail of caseStudy().detail; track $index) {
+    <section class="case-study-card-detail">
+      <h4 class="case-study-card-detail-title">{{ detail.title }}</h4>
+      <p class="case-study-card-detail-body">{{ detail.body }}</p>
+    </section>
+  }
+  <section class="case-study-card-tags">
+    <ul>
+      @for (tag of caseStudy().tags; track $index) {
+        <li>{{ tag }}</li>
+      }
+    </ul>
+  </section>
+</article>

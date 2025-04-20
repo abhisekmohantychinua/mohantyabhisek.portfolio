@@ -8,10 +8,11 @@ import {CtaComponent} from './features/cta/cta.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {TechStackComponent} from './features/tech-stack/tech-stack.component';
 import {ActionService} from './core/services/action.service';
+import {CaseStudiesComponent} from './features/case-studies/case-studies.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HeroComponent, NavbarComponent, ProjectsComponent, AboutMeComponent, PhilosophyComponent, CtaComponent, FooterComponent, TechStackComponent],
+  imports: [HeroComponent, NavbarComponent, ProjectsComponent, AboutMeComponent, PhilosophyComponent, CtaComponent, FooterComponent, TechStackComponent, CaseStudiesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
