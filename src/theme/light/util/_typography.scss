@@ -1,0 +1,13 @@
+@use "sass:map";
+
+$font-weights: (regular:400, medium: 500, bold: 700);
+$font-sizes: (xxl:48px, xl:40px, lg:36px, md:24px, sm:16px, xs:14px);
+$font-family: "Montserrat", sans-serif;
+
+@function fw($name) {
+  @return map.get($font-weights, $name);
+}
+
+@function fs($name) {
+  @return map.get($font-sizes, $name);
+}

@@ -1,0 +1,83 @@
+@use "../util" as *;
+
+.hero {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoint(medium) {
+    height: auto;
+    flex-direction: column-reverse;
+    justify-content: end;
+  }
+
+  &-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0 20px;
+    @include breakpoint(medium) {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+
+  &-heading {
+    font-size: fs(xxl);
+    font-weight: fw(medium);
+  }
+
+  &-subheading {
+    font-size: fs(xs);
+    font-weight: fw(bold);
+    color: $secondary;
+    margin-bottom: -10px;
+  }
+
+  app-cta-btn {
+    @include breakpoint(medium) {
+      align-self: end;
+    }
+  }
+
+  .cta-btn {
+    margin: 20px 0;
+    @include breakpoint(medium) {
+      margin: 40px 0;
+    }
+  }
+
+  &-social-links {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+
+    @include breakpoint(medium) {
+      width: 100%;
+      position: static;
+      margin-top: 20px;
+      justify-content: center;
+    }
+  }
+
+  &-picture {
+    height: 100%;
+    width: auto;
+    max-height: 500px;
+    object-fit: scale-down;
+
+    @include breakpoint(small) {
+      max-height: 250px;
+    }
+  }
+}

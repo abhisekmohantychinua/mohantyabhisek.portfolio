@@ -1,5 +1,7 @@
-import {Component, HostListener, OnInit, signal} from '@angular/core';
+import {Component, HostListener, inject, OnInit, signal} from '@angular/core';
 import {RoundIconComponent} from '../round-icon/round-icon.component';
+import {ThemeService} from '../../core/services/theme.service';
+import {Theme} from '../../core/models/theme';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +12,7 @@ import {RoundIconComponent} from '../round-icon/round-icon.component';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements OnInit {
+  private theme: ThemeService = inject(ThemeService);
   isMenuHidden = signal(true);
 
   ngOnInit(): void {
@@ -27,10 +30,15 @@ export class NavbarComponent implements OnInit {
     this.isMenuHidden.update(open => !open);
   }
 
-  navLinkClick($event: MouseEvent, elId: string) {
+  navLinkClick($event: MouseEvent, elId: string | null = null) {
     $event.preventDefault();
-    const targetEl = document.getElementById(elId);
-    targetEl?.scrollIntoView({behavior: 'smooth', block: 'start'});
+    if (elId) {
+      const targetEl = document.getElementById(elId);
+      targetEl?.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
   }
 
+  changeTheme(theme: Theme) {
+    this.theme.setTheme(theme);
+  }
 }

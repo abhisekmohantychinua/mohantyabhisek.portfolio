@@ -2,6 +2,7 @@ import {inject, Injectable, PLATFORM_ID} from '@angular/core';
 import {Project} from '../models/project';
 import {CaseStudy} from '../models/case-study';
 import {isPlatformBrowser} from '@angular/common';
+import {isValidTheme} from '../models/theme';
 
 @Injectable({
   providedIn: 'root'
@@ -283,6 +284,8 @@ export class StorageService {
     if (isPlatformBrowser(this.platformId)) {
       let item = localStorage.getItem(key);
       try {
+        if (item && isValidTheme(item))
+          return item as T;
         return item ? JSON.parse(item) as T : null;
       } catch (err) {
         console.log(err);

@@ -1,0 +1,59 @@
+@use "util" as *;
+@use "components";
+@use "features";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+[aria-hidden = "true"] {
+  pointer-events: none;
+}
+
+body {
+  background-color: $background;
+  color: $primary;
+  font-family: $font-family;
+
+  .header {
+    height: 80px;
+    width: 100%;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+
+    @include breakpoint(medium) {
+      width: 100%;
+    }
+  }
+
+  .footer {
+    width: 100%;
+  }
+
+  ::-webkit-scrollbar, &::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track, &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb, &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover, &::-webkit-scrollbar-thumb:hover {
+    background: $secondary;
+  }
+
+  & {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
