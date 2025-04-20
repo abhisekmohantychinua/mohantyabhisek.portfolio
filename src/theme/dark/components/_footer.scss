@@ -39,9 +39,10 @@
       font-weight: fw(regular);
       font-size: fs(xs);
 
-      &:hover {
+      &:hover, &:focus-visible {
         color: $secondary;
         text-decoration: underline;
+        outline: none;
       }
     }
   }
