@@ -19,7 +19,7 @@ export class ThemeService {
     const link = document.createElement('link');
     link.id = 'theme-link';
     link.rel = 'stylesheet';
-    link.href = `themes/${theme}.css`;
+    link.href = `themes/${theme}/${theme}.css`;
     document.getElementById('theme-link')?.remove();
     document.head.appendChild(link);
     link.onload = () => {
