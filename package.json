@@ -5,7 +5,7 @@
     "ng": "ng",
     "build:theme": "npx sass src/theme/:public/themes/ --no-source-map",
     "start": "ng serve --no-hmr --host 0.0.0.0",
-    "build": "npm run build:theme && ng build",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
