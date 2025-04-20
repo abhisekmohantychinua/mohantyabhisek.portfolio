@@ -10,6 +10,8 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class RoundIconComponent {
   icon = input.required<string>();
+  accessibility = input<boolean>(true);
+  
   private iconService: IconService = inject(IconService);
   private domSanitizer: DomSanitizer = inject(DomSanitizer);
   iconAsSvg = computed(() => {

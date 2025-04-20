@@ -1,1 +1,8 @@
-<button class="round-icon" [innerHTML]="iconAsSvg()" (click)="onClick()"></button>
+<button
+  class="round-icon"
+  type="button"
+  [innerHTML]="iconAsSvg()"
+  (click)="onClick()"
+  [attr.aria-hidden]="!accessibility()"
+  [attr.tabindex]="!accessibility()? -1 : 0"
+></button>

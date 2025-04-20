@@ -40,5 +40,8 @@
   }
 
   ::-webkit-scrollbar-thumb:hover, &::-webkit-scrollbar-thumb:hover {
+    background: $secondary;
   }
+
+  -webkit-tap-highlight-color: transparent;
 }

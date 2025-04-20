@@ -27,4 +27,10 @@ export class NavbarComponent implements OnInit {
     this.isMenuHidden.update(open => !open);
   }
 
+  navLinkClick($event: MouseEvent, elId: string) {
+    $event.preventDefault();
+    const targetEl = document.getElementById(elId);
+    targetEl?.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+
 }

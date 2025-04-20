@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+[aria-hidden = "true"] {
+  pointer-events: none;
+}
+
 [data-theme = "dark"] {
   @include dark.dark;
 }

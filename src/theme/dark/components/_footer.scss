@@ -67,7 +67,7 @@
       gap: 5px;
 
       .round-icon {
-        background-color: $accent;
+        background-color: $accent-70;
         border: none;
         height: 40px;
         width: 40px;
@@ -79,14 +79,14 @@
         }
 
         &:hover, &:focus-visible {
-          background: $accent-70;
+          background: $accent;
         }
       }
 
       &-desc {
         width: 100%;
         text-align: center;
-        color: $accent;
+        color: $accent-70;
         font-weight: fw(regular);
         font-size: fs(xs);
       }

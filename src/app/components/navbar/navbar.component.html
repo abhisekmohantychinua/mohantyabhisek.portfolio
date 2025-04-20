@@ -7,10 +7,10 @@
 </div>
 <nav [attr.data-menu-hidden]="isMenuHidden()" class="navbar">
   <ul class="nav-list">
-    <li class="nav-list-item"><a href="#home">Home</a></li>
-    <li class="nav-list-item"><a href="#projects">Projects</a></li>
-    <li class="nav-list-item"><a href="#aboutme">About Me</a></li>
-    <li class="nav-list-item"><a href="#philosophy">Philosophy</a></li>
+    <li class="nav-list-item"><a href="#home" (click)="navLinkClick($event,'home')">Home</a></li>
+    <li class="nav-list-item"><a href="#projects" (click)="navLinkClick($event,'projects')">Projects</a></li>
+    <li class="nav-list-item"><a href="#aboutme" (click)="navLinkClick($event,'aboutme')">About Me</a></li>
+    <li class="nav-list-item"><a href="#philosophy" (click)="navLinkClick($event,'philosophy')">Philosophy</a></li>
     <li class="nav-list-item dropdown">
       <p>Customize</p>
       <ul class="nav-dropdown-list">

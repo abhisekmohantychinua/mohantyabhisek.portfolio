@@ -6,20 +6,21 @@
       <h4 class="project-title">{{ project().title }} </h4>
       <div class="project-icon-container">
         @if (project().links?.github) {
-          <app-round-icon icon="github" (btnClick)="openGithub()"/>
+          <app-round-icon icon="github" (btnClick)="openGithub()" [accessibility]="state() === 'open'"/>
         }
         @if (project().links?.visit) {
-          <app-round-icon icon="window" (btnClick)="openVisit()"/>
+          <app-round-icon icon="window" (btnClick)="openVisit()" [accessibility]="state() === 'open'"/>
         }
       </div>
       <p class="project-tech-container">
         @for (tech of project().technologies; track $index) {
-          <span class="project-tech-item">{{ tech + ', ' }}</span>
+          <span class="project-tech-item" [attr.tabindex]="state() === 'open'? 0 : -1"
+                [attr.aria-hidden]="state() === 'close'">{{ tech + ', ' }}</span>
         }
       </p>
     </div>
 
-    <ul class="project-body">
+    <ul class="project-body" [attr.aria-hidden]="state() === 'close'" tabindex="-1">
       @for (desc of project().description; track $index) {
         <li class="project-desc-item">{{ desc }}</li>
       }
