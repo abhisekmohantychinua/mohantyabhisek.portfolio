@@ -1,30 +1,53 @@
-<section id="footer" class="footer-container">
-  <nav class="footer-nav">
+<div id="footer" class="footer-container">
+  <nav class="footer-nav" aria-label="Footer navigation">
     <ul class="footer-nav-links">
       <li class="footer-nav-links-item">
-        <a target="_blank" href="https://github.com/abhisekmohantychinua/mohantyabhisek.portfolio.git"
-           class="footer-nav-link">Github</a>
+        <a
+          target="_blank"
+          href="https://github.com/abhisekmohantychinua/mohantyabhisek.portfolio.git"
+          class="footer-nav-link"
+          aria-label="View project on GitHub (opens in new tab)"
+        >Github</a>
       </li>
       <li class="footer-nav-links-item">
-        <a href="" class="footer-nav-link">Documentation</a>
+        <a
+          href="https://github.com/abhisekmohantychinua/mohantyabhisek.portfolio/blob/main/docs/README.md"
+          class="footer-nav-link"
+          aria-label="View project documentation"
+        >Documentation</a>
       </li>
       <li class="footer-nav-links-item">
-        <a href="" class="footer-nav-link">Create Own Template</a>
+        <a
+          href="https://github.com/abhisekmohantychinua/mohantyabhisek.portfolio/blob/main/docs/contributing-themes.md"
+          class="footer-nav-link"
+          aria-label="Learn how to create your own template"
+        >Create Own Template</a>
       </li>
       <li class="footer-nav-links-item">
-        <a href="" class="footer-nav-link">Request Template</a>
+        <a
+          href="https://github.com/abhisekmohantychinua/mohantyabhisek.portfolio/blob/main/docs/template-request.md"
+          class="footer-nav-link"
+          aria-label="Request a custom template"
+        >Request Template</a>
       </li>
     </ul>
   </nav>
-  <section class="footer-action">
+  <div class="footer-action" role="region" aria-label="Resume download">
     <div class="footer-action-btn">
-      <app-round-icon (btnClick)="downloadResume()" icon="download"/>
-      <p class="footer-action-btn-desc">Download Resume</p>
+      <app-round-icon
+        (btnClick)="downloadResume()"
+        icon="download"
+        ariaLabel="Download resume PDF"
+      />
+      <p class="footer-action-btn-desc" id="download-resume-desc">Download Resume</p>
     </div>
-  </section>
+  </div>
   <p class="copyright">
-    &copy; 2025 - Abhisek Mohanty. Licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/"
-                                                     target="_blank">CC BY-NC 4.0</a>.
+    &copy; 2025 - Abhisek Mohanty. Licensed under
+    <a
+      href="https://creativecommons.org/licenses/by-nc/4.0/"
+      target="_blank"
+      aria-label="Creative Commons Attribution Non-Commercial 4.0 License (opens in new tab)"
+    >CC BY-NC 4.0</a>.
   </p>
-</section>
-
+</div>

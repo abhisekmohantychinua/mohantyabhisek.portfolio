@@ -5,4 +5,6 @@
   (click)="onClick()"
   [attr.aria-hidden]="!accessibility()"
   [attr.tabindex]="!accessibility()? -1 : 0"
+  [attr.aria-label]="ariaLabel() || icon()"
+  role="button"
 ></button>

@@ -1,16 +1,37 @@
-<article class="case-study-card" [attr.data-open]="open()">
+<article
+  class="case-study-card"
+  [attr.data-open]="open()"
+  [attr.aria-expanded]="open()"
+  [id]="caseStudyId()"
+>
   <header class="case-study-card-header">
-    <h3 class="case-study-card-title">{{ caseStudy().title }}</h3>
-    <app-round-icon icon="arrow" (btnClick)="toggleOpen()"/>
+    <h3
+      class="case-study-card-title"
+      [id]="caseStudyId() + '-title'"
+    >{{ caseStudy().title }}</h3>
+    <app-round-icon
+      icon="arrow"
+      (btnClick)="toggleOpen()"
+      [ariaLabel]="open() ? 'Collapse case study' : 'Expand case study'"
+    />
   </header>
   <p class="case-study-card-desc">{{ caseStudy().description }}</p>
   @for (detail of caseStudy().detail; track $index) {
-    <section class="case-study-card-detail">
-      <h4 class="case-study-card-detail-title">{{ detail.title }}</h4>
+    <section
+      class="case-study-card-detail"
+      [attr.aria-labelledby]="caseStudyId() + '-detail-' + $index"
+    >
+      <h4
+        class="case-study-card-detail-title"
+        [id]="caseStudyId() + '-detail-' + $index"
+      >{{ detail.title }}</h4>
       <p class="case-study-card-detail-body">{{ detail.body }}</p>
     </section>
   }
-  <section class="case-study-card-tags">
+  <section
+    class="case-study-card-tags"
+    aria-label="Case study tags"
+  >
     <ul>
       @for (tag of caseStudy().tags; track $index) {
         <li>{{ tag }}</li>

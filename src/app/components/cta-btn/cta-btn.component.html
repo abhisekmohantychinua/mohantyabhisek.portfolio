@@ -1,4 +1,9 @@
-<button class="cta-btn" (click)="onClick()">
-  <span class="cta-btn-icon" [innerHTML]="iconAsSvg()"></span>
+<button
+  class="cta-btn"
+  (click)="onClick()"
+  type="button"
+  aria-label="Email Me"
+>
+  <span class="cta-btn-icon" [innerHTML]="iconAsSvg()" aria-hidden="true"></span>
   <span class="cta-btn-text">Email Me</span>
 </button>

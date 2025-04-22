@@ -26,10 +26,11 @@ export class AppComponent implements OnInit {
 
   @HostListener('document:keydown', ['$event'])
   handleKeyPress(event: KeyboardEvent) {
-    if (event.key.toLowerCase() === 'r' && !(event.target instanceof HTMLInputElement)) {
+    if (event.key.toLowerCase() === 'r' &&
+        !(event.target instanceof HTMLInputElement) &&
+        !(event.target instanceof HTMLTextAreaElement)) {
       this.action.redirectTo('AbhisekMohanty.pdf');
     }
-
   }
 
   ngOnInit(): void {

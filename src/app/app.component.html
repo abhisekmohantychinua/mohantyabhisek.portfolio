@@ -1,7 +1,14 @@
-<header class="header">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Keyboard shortcut information for screen readers -->
+<div class="sr-only" aria-live="polite">
+  Press R to view resume PDF
+</div>
+
+<header class="header" role="banner">
   <app-navbar></app-navbar>
 </header>
-<main class="container">
+<main id="main-content" class="container" role="main">
   <app-hero></app-hero>
   <app-tech-stack></app-tech-stack>
   <app-projects></app-projects>
@@ -10,6 +17,6 @@
   <app-philosophy></app-philosophy>
   <app-cta></app-cta>
 </main>
-<footer>
+<footer role="contentinfo">
   <app-footer></app-footer>
 </footer>

@@ -1,26 +1,56 @@
-<div class="project-card" [attr.data-state]="state()">
+<div
+  class="project-card"
+  [attr.data-state]="state()"
+  [attr.aria-expanded]="state() === 'open'"
+  role="region"
+  [attr.aria-labelledby]="'project-title-' + project().id"
+>
   <div class="project-card-content">
     <div class="project-header">
-      <img class="project-card-image" [ngSrc]="project().image" [alt]="project().title" height="500" width="700"
-           priority>
-      <h4 class="project-title">{{ project().title }} </h4>
-      <div class="project-icon-container">
+      <img
+        class="project-card-image"
+        [ngSrc]="project().image"
+        [alt]="'Screenshot of ' + project().title + ' project'"
+        height="500"
+        width="700"
+        priority
+      >
+      <h4 class="project-title" [id]="'project-title-' + project().id">{{ project().title }}</h4>
+      <div class="project-icon-container" aria-label="Project links">
         @if (project().links?.github) {
-          <app-round-icon icon="github" (btnClick)="openGithub()" [accessibility]="state() === 'open'"/>
+          <app-round-icon
+            icon="github"
+            (btnClick)="openGithub()"
+            [accessibility]="state() === 'open'"
+            ariaLabel="View project on GitHub"
+          />
         }
         @if (project().links?.visit) {
-          <app-round-icon icon="window" (btnClick)="openVisit()" [accessibility]="state() === 'open'"/>
+          <app-round-icon
+            icon="window"
+            (btnClick)="openVisit()"
+            [accessibility]="state() === 'open'"
+            ariaLabel="Visit live project"
+          />
         }
       </div>
-      <p class="project-tech-container">
+      <div class="project-tech-container" aria-label="Technologies used">
         @for (tech of project().technologies; track $index) {
-          <span class="project-tech-item" [attr.tabindex]="state() === 'open'? 0 : -1"
-                [attr.aria-hidden]="state() === 'close'">{{ tech + ', ' }}</span>
+          <span
+            class="project-tech-item"
+            [attr.tabindex]="state() === 'open'? 0 : -1"
+            [attr.aria-hidden]="state() === 'close'"
+          >{{ tech + ($index < project().technologies.length - 1 ? ', ' : '') }}</span>
         }
-      </p>
+      </div>
     </div>
 
-    <ul class="project-body" [attr.aria-hidden]="state() === 'close'" tabindex="-1">
+    <ul
+      class="project-body"
+      [attr.aria-hidden]="state() === 'close'"
+      [attr.tabindex]="state() === 'open' ? 0 : -1"
+      aria-label="Project description"
+    >
       @for (desc of project().description; track $index) {
         <li class="project-desc-item">{{ desc }}</li>
       }
@@ -29,6 +59,10 @@
   </div>
   <div class="project-card-navigator">
     <h4 class="project-card-title">{{ project().title }}</h4>
-    <app-round-icon (btnClick)="toggleState()" icon="arrow-right"/>
+    <app-round-icon
+      (btnClick)="toggleState()"
+      icon="arrow-right"
+      [ariaLabel]="state() === 'open' ? 'Collapse project details' : 'Expand project details'"
+    />
   </div>
 </div>

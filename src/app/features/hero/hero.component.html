@@ -1,15 +1,15 @@
-<section class="hero" id="home">
+<section class="hero" id="home" aria-labelledby="hero-heading">
   <div class="hero-content">
     <p class="hero-subheading">{{ profession }}</p>
-    <h1 class="hero-heading">{{ name }}</h1>
+    <h1 id="hero-heading" class="hero-heading">{{ name }}</h1>
     <app-typewrite [texts]="description" prefix="I am a"/>
     <app-cta-btn/>
-    <div class="hero-social-links">
-      <app-round-icon (btnClick)="openLinkedin()" icon="linkedin"></app-round-icon>
-      <app-round-icon (btnClick)="openGithub()" icon="github"></app-round-icon>
-      <app-round-icon (btnClick)="openWhatsapp()" icon="whatsapp"></app-round-icon>
-      <app-round-icon (btnClick)="openEmail()" icon="mail"></app-round-icon>
+    <div class="hero-social-links" aria-label="Social media links">
+      <app-round-icon (btnClick)="openLinkedin()" icon="linkedin" ariaLabel="Visit LinkedIn profile"></app-round-icon>
+      <app-round-icon (btnClick)="openGithub()" icon="github" ariaLabel="Visit GitHub profile"></app-round-icon>
+      <app-round-icon (btnClick)="openWhatsapp()" icon="whatsapp" ariaLabel="Contact via WhatsApp"></app-round-icon>
+      <app-round-icon (btnClick)="openEmail()" icon="mail" ariaLabel="Send email"></app-round-icon>
     </div>
   </div>
-  <img ngSrc="profile.webp" height="1000" width="641" priority alt="hero" class="hero-picture"/>
+  <img ngSrc="profile.webp" height="1000" width="641" priority alt="Profile photo of Abhisek Mohanty" class="hero-picture"/>
 </section>

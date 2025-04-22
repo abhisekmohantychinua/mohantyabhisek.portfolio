@@ -94,6 +94,7 @@ theme/
 - [Requesting the Design as a Template](template-request.md)
 - [Contributing Your Own Themes](contributing-themes.md)
 - [Forking and Using This Repository](forking-guide.md)
+- [Accessibility Documentation](accessibility.md)
 
 ## License and Attribution
 

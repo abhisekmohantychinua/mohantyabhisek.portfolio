@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abhisekmohantychinua.github.io/mohantyabhisek.portfolio/sitemap.xml
