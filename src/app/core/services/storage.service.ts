@@ -42,7 +42,7 @@ export class StorageService {
         'API Gateway', 'Service Discovery', 'Webhooks', 'MySQL', 'MongoDB',
         'Docker', 'Kubernetes', 'Networking', 'JavaScript'
       ],
-      image: '1.jpg',
+      image: 'images/projects/1.jpg',
       links: {
         github: 'https://github.com/abhisekmohantychinua/E-Commerce-Microservices',
       }
@@ -55,7 +55,7 @@ export class StorageService {
         'The application has a Spring Boot Api, Angular frontend, MySQL database. Networking, Data Persistency and Deployment is managed by Docker',
       ],
       technologies: ['Java', 'Spring Boot', 'Angular', 'MySQL', 'Docker'],
-      image: '2.jpg',
+      image: 'images/projects/2.jpg',
       links: {
         github: 'https://github.com/abhisekmohantychinua/E-Commerce-Monolithic'
       }
@@ -68,7 +68,7 @@ export class StorageService {
         'This application has Spring Boot backend Api and the Api is consumed by React frontend. The React frontend integrates with Microsoft Monaco Editor API to provide code editor. All the application is containerized with Docker. '
       ],
       technologies: ['Java', 'Spring Boot', 'React', 'Docker', 'Monaco Editor API'],
-      image: '3.jpg',
+      image: 'images/projects/3.jpg',
       links: {
         github: 'https://github.com/abhisekmohantychinua/snippetsaver'
       }
@@ -80,7 +80,7 @@ export class StorageService {
         'This is a separate application which is built with Microservices architecture and implements Cloud concepts like API Gateway, Routing, Authorization Server(non-standard), Service Discovery, Config Server. The code base is with Spring Boot'
       ],
       technologies: ['Java', 'Spring Boot', 'Microservices', 'API Gateway', 'Config Server'],
-      image: '4.jpg',
+      image: 'images/projects/4.jpg',
       links: {
         github: 'https://github.com/abhisekmohantychinua/SnippetSaver2'
       }
@@ -93,7 +93,7 @@ export class StorageService {
         'The whole application is made up of Spring MVC and MongoDB as database. I have containerized this using Docker and deployed using Render.com. '
       ],
       technologies: ['Java', 'Spring MVC', 'MongoDB', 'Docker'],
-      image: '5.jpg',
+      image: 'images/projects/5.jpg',
       links: {
         github: 'https://github.com/abhisekmohantychinua/Portfolio',
         visit: 'https://coderabhisek.onrender.com/'
@@ -106,7 +106,7 @@ export class StorageService {
         'There is an API which is very popular named FakeStoreApi. This provides an abstract API for creating client application.  I have created the client application using Angular and Material Angular library. It has a very classic UI.  Along with it I have created its Documentation which defines my documentation writing skills. This is deployed on GitHub Pages.'
       ],
       technologies: ['Angular', 'Material UI'],
-      image: '6.jpg',
+      image: 'images/projects/6.jpg',
       links: {
         github: 'https://github.com/abhisekmohantychinua/fakestoreclient',
         visit: 'https://abhisekmohantychinua.github.io/fakestoreclient/'
@@ -119,7 +119,7 @@ export class StorageService {
         'Avyakt is one of technical events of our department. So, I have created my version of the website using the already existing website and deployed it on GitHub Pages. This is an Angular application with premium UI things like Parallax Scrolling, Hover Dropdown.'
       ],
       technologies: ['Angular', 'Parallax Scrolling', 'UI Effects'],
-      image: '7.jpg',
+      image: 'images/projects/7.jpg',
       links: {
         github: 'https://github.com/abhisekmohantychinua/avyakt',
         visit: 'https://abhisekmohantychinua.github.io/avyakt/'

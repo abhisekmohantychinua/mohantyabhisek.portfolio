@@ -2,9 +2,11 @@
   <app-title text="About Me"/>
   <div class="aboutme-container">
     <div class="aboutme-image-container">
-      <img class="aboutme-image" ngSrc="profile.jpg" alt="profile" height="120" width="240" priority>
-      <img class="aboutme-image" ngSrc="workspace.jpg" alt="workspace" height="120" width="240" priority>
-      <img class="aboutme-image" ngSrc="inspiration.jpg" alt="inspiration" height="120" width="240" priority>
+      <img class="aboutme-image" ngSrc="images/about-me/profile.jpg" alt="profile" height="120" width="240" priority>
+      <img class="aboutme-image" ngSrc="images/about-me/workspace.jpg" alt="workspace" height="120" width="240"
+           priority>
+      <img class="aboutme-image" ngSrc="images/about-me/inspiration.jpg" alt="inspiration" height="120" width="240"
+           priority>
     </div>
     <div class="aboutme-content-container">
       @for (text of aboutme; track $index) {
