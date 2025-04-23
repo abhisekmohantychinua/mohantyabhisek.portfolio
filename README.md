@@ -1,4 +1,10 @@
-# MohantyabhisekPortfolio
+# Abhisek Mohanty Portfolio
+
+A modern, responsive portfolio website built with Angular. This project showcases my projects, case studies, technical skills, and professional philosophy.
+
+## Documentation
+
+For comprehensive documentation about this project, including detailed architecture, component documentation, theme system, and more, please refer to the [Project Documentation](docs/README.md).
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
 

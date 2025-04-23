@@ -43,3 +43,4 @@ Thumbs.db
 
 # Compiled SCSS
 public/themes
+coverage
