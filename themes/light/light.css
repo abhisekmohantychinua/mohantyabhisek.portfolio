@@ -233,9 +233,21 @@
   transform: translateX(-50%) scaleY(1);
   pointer-events: auto;
 }
+.navbar .nav-list .dropdown:hover .nav-dropdown-list .nav-dropdown-list-title {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  border-bottom: 1px solid #4F46E5;
+  padding: 5px;
+}
 .navbar .nav-list .dropdown:hover .nav-dropdown-list .nav-dropdown-list-item {
   width: 100%;
   padding: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 2px 0;
 }
 .navbar .nav-list .dropdown:hover .nav-dropdown-list .nav-dropdown-list-item:hover, .navbar .nav-list .dropdown:hover .nav-dropdown-list .nav-dropdown-list-item:focus-visible {
   color: #4F46E5;
