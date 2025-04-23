@@ -7,15 +7,25 @@
 </div>
 <nav [attr.data-menu-hidden]="isMenuHidden()" class="navbar" aria-label="Main navigation">
   <ul class="nav-list" role="menubar">
-    <li class="nav-list-item" role="none"><a href="#home" (click)="navLinkClick($event,'home')" role="menuitem">Home</a></li>
-    <li class="nav-list-item" role="none"><a href="#projects" (click)="navLinkClick($event,'projects')" role="menuitem">Projects</a></li>
-    <li class="nav-list-item" role="none"><a href="#aboutme" (click)="navLinkClick($event,'aboutme')" role="menuitem">About Me</a></li>
-    <li class="nav-list-item" role="none"><a href="#philosophy" (click)="navLinkClick($event,'philosophy')" role="menuitem">Philosophy</a></li>
+    <li class="nav-list-item" role="none"><a href="#home" (click)="navLinkClick($event,'home')" role="menuitem">Home</a>
+    </li>
+    <li class="nav-list-item" role="none"><a href="#projects" (click)="navLinkClick($event,'projects')" role="menuitem">Projects</a>
+    </li>
+    <li class="nav-list-item" role="none"><a href="#aboutme" (click)="navLinkClick($event,'aboutme')" role="menuitem">About
+      Me</a></li>
+    <li class="nav-list-item" role="none"><a href="#philosophy" (click)="navLinkClick($event,'philosophy')"
+                                             role="menuitem">Philosophy</a></li>
     <li class="nav-list-item dropdown" role="none">
-      <a href="#" (click)="navLinkClick($event)" role="menuitem" aria-haspopup="true" aria-expanded="false">Customize</a>
+      <a href="#" (click)="navLinkClick($event)" role="menuitem" aria-haspopup="true"
+         aria-expanded="false">Customize</a>
       <ul class="nav-dropdown-list" role="menu" aria-label="Theme options">
-        <li class="nav-dropdown-list-item" (click)="changeTheme('dark')" role="menuitem" tabindex="0" aria-label="Switch to dark theme">Dark</li>
-        <li class="nav-dropdown-list-item" (click)="changeTheme('light')" role="menuitem" tabindex="0" aria-label="Switch to light theme">Light</li>
+        <li class="nav-dropdown-list-title" role="menuitem" aria-label="Available Themes">Themes</li>
+        <li class="nav-dropdown-list-item" (click)="changeTheme('dark')" role="menuitem" tabindex="0"
+            aria-label="Switch to dark theme">Dark
+        </li>
+        <li class="nav-dropdown-list-item" (click)="changeTheme('light')" role="menuitem" tabindex="0"
+            aria-label="Switch to light theme">Light
+        </li>
       </ul>
     </li>
   </ul>

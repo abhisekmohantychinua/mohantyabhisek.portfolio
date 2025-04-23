@@ -13,6 +13,10 @@ describe('ActionService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(ActionService);
+
+    // Mock window.open
+    window.open = jest.fn();
+
     // Clear all mocks before each test
     jest.clearAllMocks();
   });

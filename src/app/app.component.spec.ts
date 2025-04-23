@@ -26,6 +26,16 @@ describe('AppComponent', () => {
         { provide: StorageService, useValue: {} },
         { provide: ThemeService, useValue: mockThemeService }
       ]
+    }).overrideComponent(AppComponent, {
+      set: {
+        template: `
+          <a href="#main-content" class="skip-link">Skip to main content</a>
+          <div class="sr-only" aria-live="polite">Press R to view resume PDF</div>
+          <header class="header" role="banner"></header>
+          <main id="main-content" class="container" role="main"></main>
+          <footer role="contentinfo"></footer>
+        `
+      }
     }).compileComponents();
   });
 

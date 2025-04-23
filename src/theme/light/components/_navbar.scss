@@ -148,9 +148,22 @@
           transform: translateX(-50%) scaleY(1);
           pointer-events: auto;
 
+          .nav-dropdown-list-title {
+            width: 100%;
+            text-align: center;
+            font-size: fs(sm);
+            font-weight: fw(medium);
+            color: $primary;
+            border-bottom: 1px solid $secondary;
+            padding: 5px;
+          }
+
           .nav-dropdown-list-item {
             width: 100%;
             padding: 5px;
+            font-size: fs(xs);
+            font-weight: fw(regular);
+            margin: 2px 0;
 
             &:hover, &:focus-visible {
               color: $secondary;

@@ -13,9 +13,33 @@ import { StorageService } from './storage.service';
 describe('StorageService', () => {
   let service: StorageService;
 
-  // Clear localStorage before each test
+  // Mock localStorage
+  let mockLocalStorage: {
+    getItem: jest.Mock;
+    setItem: jest.Mock;
+    removeItem: jest.Mock;
+    clear: jest.Mock;
+  };
+
+  // Set up localStorage mock before each test
   beforeEach(() => {
-    localStorage.clear();
+    mockLocalStorage = {
+      getItem: jest.fn(),
+      setItem: jest.fn(),
+      removeItem: jest.fn(),
+      clear: jest.fn()
+    };
+
+    // Save original localStorage
+    const originalLocalStorage = window.localStorage;
+
+    // Replace localStorage with mock
+    Object.defineProperty(window, 'localStorage', {
+      value: mockLocalStorage,
+      writable: true
+    });
+
+    // Clear all mocks
     jest.clearAllMocks();
   });
 
@@ -60,13 +84,12 @@ describe('StorageService', () => {
       // Arrange
       const key = 'testKey';
       const value = { test: 'value' };
-      const spy = jest.spyOn(localStorage, 'setItem');
 
       // Act
       service.setItem(key, value);
 
       // Assert
-      expect(spy).toHaveBeenCalledWith(key, JSON.stringify(value));
+      expect(mockLocalStorage.setItem).toHaveBeenCalledWith(key, JSON.stringify(value));
     });
 
     /**
@@ -78,13 +101,16 @@ describe('StorageService', () => {
       // Arrange
       const key = 'testKey';
       const value = { test: 'value' };
-      localStorage.setItem(key, JSON.stringify(value));
+
+      // Set up mock to return JSON string
+      mockLocalStorage.getItem.mockReturnValue(JSON.stringify(value));
 
       // Act
       const result = service.getItem(key);
 
       // Assert
       expect(result).toEqual(value);
+      expect(mockLocalStorage.getItem).toHaveBeenCalledWith(key);
     });
 
     /**
@@ -95,7 +121,9 @@ describe('StorageService', () => {
     it('should return null when getItem is called with invalid JSON', () => {
       // Arrange
       const key = 'testKey';
-      localStorage.setItem(key, 'invalid json');
+
+      // Set up mock to return invalid JSON
+      mockLocalStorage.getItem.mockReturnValue('invalid json');
       const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
 
       // Act
@@ -104,6 +132,9 @@ describe('StorageService', () => {
       // Assert
       expect(result).toBeNull();
       expect(consoleSpy).toHaveBeenCalled();
+
+      // Restore console.log
+      consoleSpy.mockRestore();
     });
 
     /**
@@ -114,15 +145,12 @@ describe('StorageService', () => {
     it('should remove data from localStorage when removeItem is called', () => {
       // Arrange
       const key = 'testKey';
-      localStorage.setItem(key, 'test');
-      const spy = jest.spyOn(localStorage, 'removeItem');
 
       // Act
       service.removeItem(key);
 
       // Assert
-      expect(spy).toHaveBeenCalledWith(key);
-      expect(localStorage.getItem(key)).toBeNull();
+      expect(mockLocalStorage.removeItem).toHaveBeenCalledWith(key);
     });
   });
 
