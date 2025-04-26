@@ -23,9 +23,9 @@ export class RoundIconComponent {
       return '';
     }
   });
-  btnClick = output();
+  btnClick = output<MouseEvent>();
 
-  onClick(): void {
-    this.btnClick.emit();
+  onClick($event: MouseEvent): void {
+    this.btnClick.emit($event);
   }
 }

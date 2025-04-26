@@ -2,11 +2,13 @@ import {Component, HostListener, inject, OnInit, signal} from '@angular/core';
 import {RoundIconComponent} from '../round-icon/round-icon.component';
 import {ThemeService} from '../../core/services/theme.service';
 import {Theme} from '../../core/models/theme';
+import {ClickOutsideDirective} from '../../core/directives/click-outside.directive';
 
 @Component({
   selector: 'app-navbar',
   imports: [
-    RoundIconComponent
+    RoundIconComponent,
+    ClickOutsideDirective
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
@@ -26,8 +28,15 @@ export class NavbarComponent implements OnInit {
     this.isMenuHidden.set(innerWidth <= 480);
   }
 
-  toggleMenu() {
+  toggleMenu($event: MouseEvent) {
+    $event.stopPropagation();
     this.isMenuHidden.update(open => !open);
+  }
+
+  clickedOutside() {
+    if (!this.isMenuHidden() && window.innerWidth <= 480) {
+      this.isMenuHidden.set(true);
+    }
   }
 
   navLinkClick($event: MouseEvent, elId: string | null = null) {

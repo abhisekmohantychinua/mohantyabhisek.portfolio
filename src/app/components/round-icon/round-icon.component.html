@@ -2,7 +2,7 @@
   class="round-icon"
   type="button"
   [innerHTML]="iconAsSvg()"
-  (click)="onClick()"
+  (click)="onClick($event)"
   [attr.aria-hidden]="!accessibility()"
   [attr.tabindex]="!accessibility()? -1 : 0"
   [attr.aria-label]="ariaLabel() || icon()"
